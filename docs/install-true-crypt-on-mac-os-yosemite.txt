@@ -1,0 +1,27 @@
+Installing TrueCrypt on Yosemite
+================================
+
+_From https://stefansundin.com/blog/656_
+
+October 28th, 2014 Stefan
+
+I have a few projects around TrueCrypt but I’ve never written about them here on my blog, for instance I’ve contributed a lot to the truecrypt-archive project on GitHub, and I have a PPA for Ubuntu.
+
+For my PPA, I wrote a patch to support Ubuntu’s appindicators, without which TrueCrypt is a lot harder to use on Ubuntu. I was updating the PPA this weekend for 14.10 and I took the opportunity to add bash completion as well. I recently discovered that the PPA is quite popular, which makes me happy.
+
+Anyway, back to the point of this blog post. Mac OS X 10.10 (Yosemite) was recently released, and both TrueCrypt 7.1a and 7.2 are unable to install on it due to a version check. Instead of posting a new binary that people don’t trust, here are steps you can take to remove the installer check from your own binary. You need to know how to use the terminal to perform these steps.
+
+The easy way is to first extract TrueCrypt 7.1a.mpkg from TrueCrypt 7.1a Mac OS X.dmg and then run this command in the terminal:
+
+    sed -i '' 's/&lt;installation-check .*&gt;//' 'TrueCrypt 7.1a.mpkg/Contents/distribution.dist'
+
+Or, if you want to create a new dmg archive with this fix, you can follow these steps:
+
+	hdiutil convert 'TrueCrypt 7.1a Mac OS X.dmg' -format UDRW -o 'TrueCrypt 7.1a Mac OS X writable.dmg'
+	hdiutil attach 'TrueCrypt 7.1a Mac OS X writable.dmg'
+	sed -i '' 's/&lt;installation-check .*&gt;//' '/Volumes/TrueCrypt 7.1a/TrueCrypt 7.1a.mpkg/Contents/distribution.dist'
+	hdiutil detach '/Volumes/TrueCrypt 7.1a'
+	hdiutil convert 'TrueCrypt 7.1a Mac OS X writable.dmg' -format UDBZ -o 'TrueCrypt 7.1a Mac OS X Yosemite.dmg'
+
+I hope this is useful to people.
+
