@@ -3,12 +3,28 @@ Last TrueCrypt
 
 An archive of the last binary release of TrueCrypt release.
 
+
 A Note On Mac OS X
 ------------------
 
 There is a bug on 7.1a release cause it can not be installed on Mac OS X Yosemite and later OS version.
 see `docs/install-true-crypt-on-mac-os-yosemite.txt` for detail and solution.
 `bin/TrueCrypt 7.1a Mac OS X Yosemite.dmg` is the fix and can be installed on Yosemite and later OS.
+
+
+sha1 hashes
+-----------
+
+    e0d406e3238b60a0591573a007e4bb4ad3c8a0cb  bin/TrueCrypt 7.1a Mac OS X Yosemite.dmg
+    16e6d7675d63fba9bb75a9983397e3fb610459a1  bin/TrueCrypt 7.1a Mac OS X.dmg
+    7689d038c76bd1df695d295c026961e50e4a62ea  bin/TrueCrypt Setup 7.1a.exe
+    c2a8c78a23f97ffb17bf47448c9f2daa3c8f80cd  bin/truecrypt-7.1a-linux-console-x64.tar.gz
+    a53a7a609a25d9a1e33f720ce5c0265ddd4e8b25  bin/truecrypt-7.1a-linux-console-x86.tar.gz
+    086cf24fad36c2c99a6ac32774833c74091acc4d  bin/truecrypt-7.1a-linux-x64.tar.gz
+    0e77b220dbbc6f14101f3f913966f2c818b0f588  bin/truecrypt-7.1a-linux-x86.tar.gz
+    d43e0dbe05c04e316447d87413c4f74c68f5de24  src/TrueCrypt 7.1a Source.tar.gz
+    4baa4660bf9369d6eeaeb63426768b74f77afdf2  src/TrueCrypt 7.1a Source.zip
+
 
 References
 ----------
